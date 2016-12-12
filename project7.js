@@ -15,8 +15,19 @@ function drawSquare(x, y, size, color) {
   // square drawing code here
 }
 
+
+
 // Step 3: Event listeners
 document.addEventListener("mousedown", function(e) {
   // what do you want to do when the user presses down
   // on the mouse button?
-})
+ var pt = transformPoint(e, screen);
+
+  var newCircle = document.createElementNS(namespace, "circle");
+  newCircle.setAttribute("fill", "purple");
+  newCircle.setAttribute("r", 25);
+  newCircle.setAttribute("opacity", 0.5);
+  newCircle.setAttribute("cx", pt.x);
+  newCircle.setAttribute("cy", pt.y);
+  canvastwo.appendChild(newCircle);
+});
