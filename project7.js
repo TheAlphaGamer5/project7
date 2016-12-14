@@ -1,5 +1,10 @@
 var screen = document.getElementById("screen")
 var namespace = "http://www.w3.org/2000/svg"
+var drawing = false;
+var selectColor = document.getElementById("colorSelect").value
+var selectShape = document.getElementById("shapeSelect").value
+var selectSize = document.getElementById("sizeSelect").value
+
 
 // utility function
 function transformPoint(event) {
@@ -36,23 +41,59 @@ function drawCircle(xpos, ypos, radius, color) {
 document.addEventListener("mousedown", function(e) {
   // what do you want to do when the user presses down
   // on the mouse button?
- var pt = transformPoint(e, screen);
-
-
+drawing = true
+console.log("drawing initatated");
+ var pt = transformPoint(e);
 });
+
+
+
+
+
+
 
 document.addEventListener("mousemove", function(e) {
-  // what do you want to do when the user presses down
-  // on the mouse button?
- var pt = transformPoint(e, screen);
+  var pt = transformPoint(e);
+  selectColor = document.getElementById("colorSelect").value
+  selectShape = document.getElementById("shapeSelect").value
+  selectSize = document.getElementById("sizeSelect").value
 
+  if (selectShape=="square") {
+    console.log("square");
+  }
+  else if (selectShape=="circle") {
+
+  }
+
+  if (selectColor=="red") {
+
+  }
+  else if (selectColor=="blue") {
+
+  }
+  else if (selectColor=="green") {
+
+  }
+  else if(selectColor=="yellow") {
+
+  }
 
 });
 
-document.addEventListener("mouseup", function(e) {
-  // what do you want to do when the user presses down
-  // on the mouse button?
- var pt = transformPoint(e, screen);
 
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("mouseup", function(e) {
+ var pt = transformPoint(e, screen);
+drawing = false;
+console.log("drawing terminated")
 
 });
