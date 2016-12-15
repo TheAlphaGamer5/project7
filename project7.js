@@ -61,7 +61,7 @@ document.addEventListener("mousemove", function(e) {
   if (selectShape=="square") {
 
   }
-  else if (selectShape=="circle") {
+  else if (selectShape=="circle" && drawing == true) {
     drawCircle(pt.x,pt.y, document.getElementById("sizeSelect").value,document.getElementById("colorSelect").value)
   }
 
