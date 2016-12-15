@@ -59,24 +59,12 @@ document.addEventListener("mousemove", function(e) {
   selectSize = document.getElementById("sizeSelect").value
 
   if (selectShape=="square") {
-    console.log("square");
+
   }
   else if (selectShape=="circle") {
-
+    drawCircle(pt.x,pt.y, document.getElementById("sizeSelect").value,document.getElementById("colorSelect").value)
   }
 
-  if (selectColor=="red") {
-
-  }
-  else if (selectColor=="blue") {
-
-  }
-  else if (selectColor=="green") {
-
-  }
-  else if(selectColor=="yellow") {
-
-  }
 
 });
 
