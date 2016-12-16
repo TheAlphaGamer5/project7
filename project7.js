@@ -23,7 +23,7 @@ function drawSquare(x, y, size, color) {
  newRect.setAttribute("y", y);
  newRect.setAttribute("width", size);
  newRect.setAttribute("height", size);
- canvas.appendChild(newRect);
+ screen.appendChild(newRect);
 }
 
 function drawCircle(xpos, ypos, radius, color) {
@@ -46,42 +46,21 @@ console.log("drawing initatated");
  var pt = transformPoint(e);
 });
 
-
-
-
-
-
-
 document.addEventListener("mousemove", function(e) {
   var pt = transformPoint(e);
   selectColor = document.getElementById("colorSelect").value
   selectShape = document.getElementById("shapeSelect").value
   selectSize = document.getElementById("sizeSelect").value
 
-  if (selectShape=="square") {
-
+  if (selectShape=="square" && drawing == true) {
+    drawSquare(pt.x,pt.y, document.getElementById("sizeSelect").value,document.getElementById("colorSelect").value)
   }
   else if (selectShape=="circle" && drawing == true) {
     drawCircle(pt.x,pt.y, document.getElementById("sizeSelect").value,document.getElementById("colorSelect").value)
   }
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("mouseup", function(e) {
  var pt = transformPoint(e, screen);
 drawing = false;
 console.log("drawing terminated")
-
 });
